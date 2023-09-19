@@ -21,7 +21,7 @@ let Navbar = ()=>{
                         <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1'>Dashboard</Link>
                     </li>
                     <li className=''>
-                        <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1'>Point 1</Link>
+                        <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1' to="/point-1">Point 1</Link>
                     </li>
                     <li className=''>
                         <Link className='nav-btn rounded-1 py-2 px-1 text-dark text-decoration-none text-white fw-medium fs-5'>Point 2</Link>
