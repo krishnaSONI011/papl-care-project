@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-
+first go backend and run [npm i ] then [node index.js] then ../ and run [npm i] then [npm strat]
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
