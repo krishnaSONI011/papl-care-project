@@ -18,7 +18,7 @@ let Navbar = ()=>{
             <div className='w-50'>
                 <ul className='d-flex list-unstyled justify-content-evenly align-items-center mb-0'>
                     <li className=''>
-                        <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1'>Dashboard</Link>
+                        <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1' to="/">Dashboard</Link>
                     </li>
                     <li className=''>
                         <Link className='text-dark py-2 px-1 text-decoration-none text-white fw-medium fs-5 nav-btn rounded-1' to="/point-1">Point 1</Link>
