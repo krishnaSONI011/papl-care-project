@@ -12,7 +12,9 @@ export default function Map() {
   width="600"
   height="450"
   frameBorder="0"
-  src={`https://www.openstreetmap.org/export/embed.html?bbox=${param1},${param2}&layer=mapnik`}
+  // src={`https://www.openstreetmap.org/export/embed.html?bbox=${param1},${param2}&layer=mapnik`}
+  src={`https://www.openstreetmap.org/export/embed.html?bbox=${param2},${param1}&layer=mapnik`}
+  // src={`https://www.openstreetmap.org/export/embed.html?bbox=${param1},${param2},${param1},${param2}&layer=mapnik`}
   allowFullScreen
 ></iframe>
 <div><Link to="/point-1" ><button className='btn btn-primary'>Back</button></Link></div>
