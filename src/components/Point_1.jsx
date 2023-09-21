@@ -15,7 +15,7 @@ let Point_1 = () => {
     async function loadData() {
         try {
             let res = await axios.get("http://localhost:8080/");
-            setData(res.data.Vehicle);
+            setData(res.data.Vehicle); 
             setFilteredData(res.data.Vehicle);
         } catch (err) {
             console.log(err);
