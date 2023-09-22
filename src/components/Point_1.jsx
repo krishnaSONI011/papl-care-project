@@ -14,7 +14,7 @@ let Point_1 = () => {
 
     async function loadData() {
         try {
-            let res = await axios.get("http://localhost:8080/");
+            let res = await axios.get("https://uninterested-crab-scarf.cyclic.cloud/");
             setData(res.data.Vehicle); 
             setFilteredData(res.data.Vehicle);
         } catch (err) {

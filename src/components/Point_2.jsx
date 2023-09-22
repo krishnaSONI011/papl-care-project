@@ -25,7 +25,7 @@ let Point_2 = () => {
             const startDate = formatDateToMMDDYY(startdate) + " " + startTime;
             const endDate = formatDateToMMDDYY(enddate) + " " + endTime;
             
-            const res = await axios.post("http://localhost:8080/filterData", {
+            const res = await axios.post("https://uninterested-crab-scarf.cyclic.cloud/filterData", {
                 vehicleNo: vehicle,
                 startDate,
                 endDate
