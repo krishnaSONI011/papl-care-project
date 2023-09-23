@@ -11,7 +11,7 @@ export default function Pdata(props) {
       <div className="border border-primary rounded-1 p-2 mt-2  mb-2">
         <ul className="d-flex list-unstyled justify-content-evenly">
           <li>
-            <span className="fw-medium">Vehicle:</span> {props.data.data[0].VehicleNo}
+            <span className="fw-medium">Vehicle:</span> {props.data.data.length <=0 ? "not found" : props.data.data[0].VehicleNo}
           </li>
           <li>
             <span className="fw-medium">Date:</span> {props.startDate}
@@ -60,22 +60,22 @@ export default function Pdata(props) {
       <div className="bg-primary text-white border-primary rounded-1 p-2 mt-3  mb-2">
         <ul className="d-flex list-unstyled justify-content-evenly">
           <li className="text-center">
-        {props.data.data[0].callingTime}
+        {props.data.data.length<=0 ? "not found" : props.data.data[0].callingTime}
             <br />
             DATE/TIME
           </li>
           <li className="text-center">
-         {parseInt(distance[0]) - parseInt(distance[distance.length-1])}
+         {parseInt(distance[0]) - parseInt(distance[distance.length-1] )}
             <br />
             KM RUN
           </li>
           <li className="text-center">
-            {props.data.data[0].Lattitude}
+            {props.data.data.length <=0  ?  "not found": props.data.data[0].Lattitude}
             <br />
             LATITUDE
           </li>
           <li className="text-center">
-        {props.data.data[0].Longitude} <br />
+        {props.data.data.length <=0  ? "not found": props.data.data[0].Longitude } <br />
             LOGGITUDE
           </li>
         </ul>

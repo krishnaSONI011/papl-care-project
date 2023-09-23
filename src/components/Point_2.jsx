@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect} from "react";
 import Form from "./Form";
 import Pdata from "./Pdata";
 import axios from 'axios';
@@ -11,7 +11,10 @@ let Point_2 = () => {
     const [endTime, setEndTime] = useState('');
     const [data, setdata] = useState([]);
     const [viewClicked, setViewClicked] = useState(false); // State to track button click
-
+    // error 
+    const [verror,setVerror] = useState('')
+    const [vsdate,setVsdate] = useState('')
+    const [vedate,setVedate] = useState('')
     function formatDateToMMDDYY(inputDate) {
         const date = new Date(inputDate);
         const year = String(date.getFullYear()).slice(-2);
@@ -22,6 +25,18 @@ let Point_2 = () => {
 
     const fetchData = async () => {
         try {
+            if(!vehicle){
+                return setVerror("Vehicle number required ")
+            }
+            else if(!startdate){
+                return setVsdate("Start Date is required")
+            }
+            else if(!enddate){
+                return setVedate("End Date is required")
+            }
+            else if(vehicle.length !== 10){
+                return setVerror("Invalid Vehicle number ")
+            }
             const startDate = formatDateToMMDDYY(startdate) + " " + startTime;
             const endDate = formatDateToMMDDYY(enddate) + " " + endTime;
             
@@ -30,7 +45,10 @@ let Point_2 = () => {
                 startDate,
                 endDate
             });
-
+            
+            setVerror("")
+            setVsdate("")
+            setVedate("")
             setdata(res.data);
             setViewClicked(true); // Button click triggers re-render of Pdata
         } catch (err) {
@@ -52,6 +70,10 @@ let Point_2 = () => {
                         enddate={setEnddate}
                         starttime={setStartTime}
                         endtime={setEndTime}
+                        verror={verror}
+                        vsdate={vsdate}
+                        vedate={vedate}
+                        
                     />
                     <div className='text-center py-3'>
                         <button className='btn btn-primary' onClick={fetchData}>View</button>
