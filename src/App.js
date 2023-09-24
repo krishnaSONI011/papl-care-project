@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Point1 from './components/Point_1';
 import Map from './components/Map';
 import Point2 from './components/Point_2';
+
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Dashboard/>}/>
       <Route path='/point-1' element={<Point1/>}/>
       <Route path='/point-2' element={<Point2/>}/>
+      
       <Route path='/map/:param1/:param2/:param3' element={<Map/>}/>
     </Routes>
     </Router>

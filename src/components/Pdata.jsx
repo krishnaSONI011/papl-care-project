@@ -1,9 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
+import Mapper from "./Mapper";
 
 export default function Pdata(props) {
-    let distance = []
+    let distance = [];
+    let markers = [];
+    const [showMap, setShowMap] = useState(true);
+    const toggleMap = () => {
+      setShowMap(!showMap);
+    };
     props.data.data.map((a)=>{
-            return distance.push(a.Odometer);
+         
+          return  distance.push(a.Odometer)
+          
+
+             
+    })
+    props.data.data.map((a)=>{
+      return markers.push({lat:a.Lattitude , lng:a.Longitude})
     })
   return (
     <>
@@ -24,7 +37,7 @@ export default function Pdata(props) {
       {/* middle section  */}
       <div className="overflow-y-scroll" style={{height:"400px"}}>
         <div>
-          <table className="table table-bordered table-striped">
+          {/* <table className="table table-bordered table-striped">
             <thead>
               <tr>
                 <th className="text-center">#</th>
@@ -52,7 +65,8 @@ export default function Pdata(props) {
                                 </tr>
                             )}
                         </tbody>
-          </table>
+          </table> */}
+        {showMap && <Mapper markers={markers}/>}
         </div>
       </div>
 
